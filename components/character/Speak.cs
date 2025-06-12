@@ -1,4 +1,3 @@
-namespace RPG.CharacterComponents;
 public class Talk : ISpeaker{
     public void Speak(){
         Console.WriteLine("The character talked");

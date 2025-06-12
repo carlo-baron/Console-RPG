@@ -1,4 +1,2 @@
-﻿using RPG.CharacterComponents;
-
-Character character = new Character(null, null, new Talk());
+﻿Character character = new Character();
 character.PerformSpeak();
