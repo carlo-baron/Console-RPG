@@ -1,6 +1,11 @@
 public class BasicAttack : IAttacker{
+    public int Damage { get; set; }
+    public BasicAttack(int damage = 10){
+       Damage = damage; 
+    }
+
     public void Attack(){
-        Console.WriteLine("The character did a basic attack");
+        Console.WriteLine($"The character did a basic attack with {Damage} damage");
     }
 }
 

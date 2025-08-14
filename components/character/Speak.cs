@@ -1,11 +1,11 @@
 public class Talk : ISpeaker{
-    public void Speak(){
-        Console.WriteLine("The character talked");
+    public void Speak(string dialogue){
+        Console.WriteLine($"The character said: \"{dialogue}\"");
     }
 }
 
 public class Whisper : ISpeaker{
-    public void Speak(){
-        Console.WriteLine("The character whispered");
+    public void Speak(string dialogue){
+        Console.WriteLine($"The character whispered: \"{dialogue}\"");
     }
 }

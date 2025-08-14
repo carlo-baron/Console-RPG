@@ -4,8 +4,16 @@ public class Character{
     public ISpeaker Speaker { get; set; } 
     public IDamageable Damageable { get; set; }
 
-    public Character(){
+    public Character(IAttacker? attacker = null, 
+                     IMover? mover = null, 
+                     ISpeaker? speaker = null, 
+                     IDamageable? damageable = null)
+    {
         Console.WriteLine("Character, Loaded");
+        Attacker = attacker ?? new BasicAttack();
+        Mover = mover ?? new Walk();
+        Speaker = speaker ?? new Talk();
+        Damageable = damageable ?? new Damage();
     }
 
     public void PerformAttack(){
@@ -16,8 +24,8 @@ public class Character{
         Mover.Move();
     }
     
-    public void PerformSpeak(){
-        Speaker.Speak();
+    public void PerformSpeak(string dialogue){
+        Speaker.Speak(dialogue);
     }
 
 }

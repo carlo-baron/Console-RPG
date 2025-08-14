@@ -1,3 +1,3 @@
 public interface ISpeaker{
-    public void Speak();
+    public void Speak(string dialogue);
 }
