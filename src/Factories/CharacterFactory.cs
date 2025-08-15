@@ -4,6 +4,6 @@ using RPG.Characters;
 
 public static class CharacterFactory{
     public static Character CreateDefaultCharacter(){
-        return new Character();
+        return new Character(name: "Character1");
     }
 }

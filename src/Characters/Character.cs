@@ -8,17 +8,21 @@ public class Character{
     public IMover Mover { get; set; }
     public ISpeaker Speaker { get; set; } 
     public IDamageable Damageable { get; set; }
+    public string Name { get; set; }
 
     public Character(IAttacker? attacker = null, 
                      IMover? mover = null, 
                      ISpeaker? speaker = null, 
-                     IDamageable? damageable = null)
+                     IDamageable? damageable = null,
+                     string name = "")
     {
-        Console.WriteLine("Character, Loaded");
         Attacker = attacker ?? new BasicAttack();
         Mover = mover ?? new Walk();
         Speaker = speaker ?? new Talk();
         Damageable = damageable ?? new Damage();
+        Name = name ?? "Character";
+
+        Console.WriteLine($"Character \"{Name}\" Loaded!");
     }
 
     public void PerformAttack(){
