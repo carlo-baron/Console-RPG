@@ -1,3 +1,8 @@
+namespace RPG.Characters; 
+
+using RPG.Characters.Components;
+using RPG.Characters.Interfaces;
+
 public class Character{
     public IAttacker Attacker { get; set; }
     public IMover Mover { get; set; }

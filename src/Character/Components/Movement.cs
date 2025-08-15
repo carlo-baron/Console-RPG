@@ -1,3 +1,7 @@
+namespace RPG.Characters.Components;
+
+using RPG.Characters.Interfaces;
+
 public class Walk : IMover{
     public int Steps { get; set; }
 
