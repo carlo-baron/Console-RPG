@@ -4,7 +4,7 @@ using RPG.Characters.Interfaces;
 
 public class Talk : ISpeaker{
     public void Speak(string dialogue){
-        Console.WriteLine($"The character said: \"{dialogue}\"");
+        Console.WriteLine($"\"{dialogue}\"");
     }
 }
 

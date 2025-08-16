@@ -14,27 +14,35 @@ public class Character{
                      IMover? mover = null, 
                      ISpeaker? speaker = null, 
                      IDamageable? damageable = null,
-                     string name = "")
+                     string name = "Character"
+                     )
     {
         Attacker = attacker ?? new BasicAttack();
         Mover = mover ?? new Walk();
         Speaker = speaker ?? new Talk();
         Damageable = damageable ?? new Damage();
-        Name = name ?? "Character";
+        Name = name;
 
         Console.WriteLine($"Character \"{Name}\" Loaded!");
     }
 
-    public void PerformAttack(){
-        Attacker.Attack();
+    public void Attack(IDamageable victim){
+        Console.Write($"{Name}: ");
+        Attacker.Attack(victim);
     }
 
-    public void PerformMove(){
+    public void Move(){
+        Console.Write($"{Name}: ");
         Mover.Move();
     }
     
-    public void PerformSpeak(string dialogue){
+    public void Speak(string dialogue){
+        Console.Write($"{Name}: ");
         Speaker.Speak(dialogue);
     }
 
+    public void TakeDamage(int damage){
+        Console.Write($"{Name}: ");
+        Damageable.TakeDamage(damage);
+    }
 }
