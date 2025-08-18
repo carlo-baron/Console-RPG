@@ -2,6 +2,7 @@ namespace RPG.Characters;
 
 using RPG.Characters.Components;
 using RPG.Characters.Interfaces;
+using System;
 
 public class Character{
     public IAttacker Attacker { get; set; }
@@ -9,6 +10,8 @@ public class Character{
     public ISpeaker Speaker { get; set; } 
     public IDamageable Damageable { get; set; }
     public string Name { get; set; }
+
+    private bool disposed = false;
 
     public Character(IAttacker? attacker = null, 
                      IMover? mover = null, 

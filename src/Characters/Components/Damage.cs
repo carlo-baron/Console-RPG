@@ -14,6 +14,8 @@ public class Damageable : IDamageable{
     }
 
     public void TakeDamage(int damage){
+        if(Health <= 0) return;
+
         Health -= damage;
         OnDamage?.Invoke(this, new DamageEventArgs(damage, Health));
         HealthCheck();

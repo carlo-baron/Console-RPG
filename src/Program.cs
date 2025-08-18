@@ -24,7 +24,7 @@ public class Program{
         enemy.Speak("Don't know.");
         player.Speak("Well then take this.");
         player.Attack(enemy);
-
+        player.Attack(enemy);
 
     }
 }
