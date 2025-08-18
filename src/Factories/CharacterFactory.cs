@@ -9,6 +9,6 @@ public static class CharacterFactory{
     }
 
     public static Character CreateEnemy(){
-        return new Character(name: "Enemy", damageable: new Damage(health: 20));
+        return new Character(name: "Enemy", damageable: new Damageable(health: 20));
     }
 }

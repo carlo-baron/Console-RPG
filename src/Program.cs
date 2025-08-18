@@ -16,8 +16,15 @@ public class Program{
 
         Character enemy = CharacterFactory.CreateEnemy();
         dialogueHandler.Register(enemy);
+        enemy.Speak("Hello too");
 
         player.Attack(enemy);
+
+        player.Speak("How are you not dead.");
+        enemy.Speak("Don't know.");
+        player.Speak("Well then take this.");
+        player.Attack(enemy);
+
 
     }
 }

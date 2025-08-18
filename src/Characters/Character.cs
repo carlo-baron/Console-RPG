@@ -20,7 +20,7 @@ public class Character{
         Attacker = attacker ?? new PunchAttack();
         Mover = mover ?? new Walk();
         Speaker = speaker ?? new Talk();
-        Damageable = damageable ?? new Damage();
+        Damageable = damageable ?? new Damageable();
         Name = name;
     }
 
