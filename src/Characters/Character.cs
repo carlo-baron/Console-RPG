@@ -17,32 +17,26 @@ public class Character{
                      string name = "Character"
                      )
     {
-        Attacker = attacker ?? new BasicAttack();
+        Attacker = attacker ?? new PunchAttack();
         Mover = mover ?? new Walk();
         Speaker = speaker ?? new Talk();
         Damageable = damageable ?? new Damage();
         Name = name;
-
-        Console.WriteLine($"Character \"{Name}\" Loaded!");
     }
 
-    public void Attack(IDamageable victim){
-        Console.Write($"{Name}: ");
-        Attacker.Attack(victim);
+    public void Attack(Character target){
+        Attacker.Attack(target.Name, target.Damageable);
     }
 
     public void Move(){
-        Console.Write($"{Name}: ");
         Mover.Move();
     }
     
     public void Speak(string dialogue){
-        Console.Write($"{Name}: ");
         Speaker.Speak(dialogue);
     }
 
     public void TakeDamage(int damage){
-        Console.Write($"{Name}: ");
         Damageable.TakeDamage(damage);
     }
 }

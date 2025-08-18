@@ -5,7 +5,7 @@ using RPG.Characters.Components;
 
 public static class CharacterFactory{
     public static Character CreatePlayer(){
-        return new Character(name: "Character1");
+        return new Character(name: "Player");
     }
 
     public static Character CreateEnemy(){

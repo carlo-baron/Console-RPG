@@ -1,15 +1,12 @@
 namespace RPG.Characters.Components;
 
 using RPG.Characters.Interfaces;
+using RPG.Events;
 
 public class Talk : ISpeaker{
-    public void Speak(string dialogue){
-        Console.WriteLine($"\"{dialogue}\"");
-    }
-}
+    public event EventHandler<SpeakEventArgs>? OnSpeak;
 
-public class Whisper : ISpeaker{
     public void Speak(string dialogue){
-        Console.WriteLine($"The character whispered: \"{dialogue}\"");
+        OnSpeak?.Invoke(this, new SpeakEventArgs(dialogue));
     }
 }

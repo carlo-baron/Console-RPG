@@ -1,5 +1,8 @@
 namespace RPG.Characters.Interfaces;
 
+using RPG.Events;
+
 public interface IAttacker{
-    public void Attack(IDamageable victim);
+    event EventHandler<AttackEventArgs> OnAttack;
+    public void Attack(string name, IDamageable target);
 }

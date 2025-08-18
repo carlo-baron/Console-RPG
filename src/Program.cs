@@ -3,16 +3,21 @@
 using RPG.Characters; 
 using RPG.Characters.Components;
 using RPG.Characters.Factories;
+using RPG.Systems;
 
 public class Program{
     public static void Main(string[] args){
-        Character player = CharacterFactory.CreatePlayer(); 
+        DialogueHandler dialogueHandler = new DialogueHandler(); 
+
+        Character player = CharacterFactory.CreatePlayer();; 
+        dialogueHandler.Register(player);
+        player.Move();
         player.Speak("Hello Brody");
 
-        Character enemy1 = CharacterFactory.CreateEnemy();
-        enemy1.Name = "Johnny";
-        enemy1.Speak($"Here's {enemy1.Name}");
+        Character enemy = CharacterFactory.CreateEnemy();
+        dialogueHandler.Register(enemy);
 
-        player.Attack(enemy1.Damageable);
+        player.Attack(enemy);
+
     }
 }

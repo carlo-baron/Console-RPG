@@ -1,22 +1,18 @@
 namespace RPG.Characters.Components;
 
 using RPG.Characters.Interfaces;
+using RPG.Events;
 
-public class BasicAttack : IAttacker{
+public class PunchAttack : IAttacker{
     public int Damage { get; set; }
-    public BasicAttack(int damage = 10){
+    public event EventHandler<AttackEventArgs>? OnAttack;
+
+    public PunchAttack(int damage = 10){
         Damage = damage; 
     }
 
-    public void Attack(IDamageable victim){
-        Console.WriteLine($"Did a basic attack with {Damage} damage");
-        victim.TakeDamage(Damage);
+    public void Attack(string name, IDamageable target){
+        OnAttack?.Invoke(this, new AttackEventArgs(name, Damage));
+        target.TakeDamage(Damage);
     }
 }
-
-public class ChargedAttack : IAttacker{
-    public void Attack(IDamageable victim){
-        Console.WriteLine("Did a charged attack");
-    }
-}
-
